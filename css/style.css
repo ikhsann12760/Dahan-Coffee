@@ -293,6 +293,12 @@ ul {
   gap: 32px;
 }
 
+.nav-close,
+.nav-brand,
+.nav-social {
+  display: none;
+}
+
 .nav-link {
   font-size: 0.9rem;
   font-weight: 500;
