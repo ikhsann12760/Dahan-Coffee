@@ -1,0 +1,16 @@
+# DAHAN KOPI - Apache Config
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Cache static assets
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|css|js|ico)$">
+  Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript image/svg+xml
+</IfModule>
