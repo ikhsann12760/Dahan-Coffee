@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header');
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
+  const navClose = document.getElementById('nav-close');
+  const navOverlay = document.getElementById('nav-overlay');
   const navLinks = document.querySelectorAll('.nav-link');
   const backToTop = document.getElementById('back-to-top');
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -73,18 +75,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Mobile Nav ---
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    nav.classList.toggle('active');
-    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-  });
+  function openNav() {
+    hamburger.classList.add('active');
+    nav.classList.add('active');
+    navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNav() {
+    hamburger.classList.remove('active');
+    nav.classList.remove('active');
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', openNav);
+  navClose.addEventListener('click', closeNav);
+  navOverlay.addEventListener('click', closeNav);
 
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      nav.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeNav);
   });
 
   // --- Back to Top ---
