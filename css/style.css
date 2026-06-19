@@ -1489,7 +1489,7 @@ ul {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    z-index: 9997;
+    z-index: 9999;
   }
 
   .nav-overlay.active {
@@ -1512,7 +1512,7 @@ ul {
     justify-content: center;
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 9998;
+    z-index: 10000;
   }
 
   .nav.active {
