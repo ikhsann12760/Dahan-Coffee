@@ -344,9 +344,10 @@ ul {
   flex-direction: column;
   gap: 5px;
   background: none;
-  border: none;
+  border: black;
   cursor: pointer;
   padding: 4px;
+  color-scheme: #ff9b06;
 }
 
 .hamburger span {
@@ -881,7 +882,7 @@ ul {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(173, 127, 2, 0.856);
   border: none;
   color: var(--white);
   font-size: 2rem;
@@ -1506,7 +1507,7 @@ ul {
     right: 0;
     left: 30%;
     bottom: 0;
-    background: rgb(255, 255, 255);
+    background: var(--primary-dark);
     backdrop-filter: none !important;
     opacity: 1;
     display: flex;
@@ -1529,13 +1530,13 @@ ul {
     background: none;
     border: none;
     font-size: 2rem;
-    color: var(--dark);
+    color: var(--secondary);
     cursor: pointer;
     transition: var(--transition);
   }
 
   .nav-close:hover {
-    color: var(--primary);
+    color: var(--white);
   }
 
   .nav-list {
@@ -1547,6 +1548,12 @@ ul {
   .nav-link {
     font-size: 1.3rem;
     font-weight: 500;
+    color: var(--secondary);
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--white);
   }
 
   .hamburger {
