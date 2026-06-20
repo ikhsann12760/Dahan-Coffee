@@ -5,22 +5,22 @@
 
 /* --- CSS Variables --- */
 :root {
-  --primary: #6F4E37;
-  --primary-dark: #5A3D2B;
-  --primary-light: #8B6B4A;
-  --secondary: #D2B48C;
-  --secondary-light: #E8D5B7;
-  --accent: #C1621A;
-  --accent-light: #E07A2F;
-  --light: #F5F1E8;
-  --light-alt: #FAF7F0;
-  --dark: #2B2520;
-  --dark-soft: #3D3229;
-  --text: #333333;
-  --text-light: #666666;
+  --primary: #6F8A7A;
+  --primary-dark: #4A5B52;
+  --primary-light: #B9C9B8;
+  --secondary: #B9C9B8;
+  --secondary-light: #EFECE3;
+  --accent: #4A5B52;
+  --accent-light: #6F8A7A;
+  --light: #EFECE3;
+  --light-alt: #EFECE3;
+  --dark: #2B2A24;
+  --dark-soft: #4A5B52;
+  --text: #2B2A24;
+  --text-light: #4A5B52;
   --white: #FFFFFF;
-  --shadow: 0 4px 20px rgba(43, 37, 32, 0.1);
-  --shadow-lg: 0 8px 40px rgba(43, 37, 32, 0.15);
+  --shadow: 0 4px 20px rgba(43, 42, 36, 0.1);
+  --shadow-lg: 0 8px 40px rgba(43, 42, 36, 0.15);
   --radius: 12px;
   --radius-lg: 20px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
