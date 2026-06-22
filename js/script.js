@@ -135,25 +135,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openLightbox(src) {
     lightboxImg.src = src;
+    lightboxImg.classList.remove('slide-out-left', 'slide-out-right');
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
+    lightboxImg.classList.remove('slide-out-left', 'slide-out-right');
     document.body.style.overflow = '';
   }
 
   function navigateLightbox(direction) {
-    currentImageIndex += direction;
+    if (lightboxImg.classList.contains('slide-out-left') || lightboxImg.classList.contains('slide-out-right')) return;
 
-    if (currentImageIndex < 0) {
-      currentImageIndex = galleryImages.length - 1;
-    } else if (currentImageIndex >= galleryImages.length) {
-      currentImageIndex = 0;
-    }
+    const slideOut = direction === 1 ? 'slide-out-right' : 'slide-out-left';
 
-    lightboxImg.src = galleryImages[currentImageIndex];
+    lightboxImg.classList.add(slideOut);
+
+    setTimeout(() => {
+      currentImageIndex += direction;
+
+      if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+      } else if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
+      }
+
+      lightboxImg.classList.remove('slide-out-left', 'slide-out-right');
+      lightboxImg.src = galleryImages[currentImageIndex];
+    }, 300);
   }
 
   lightboxClose.addEventListener('click', closeLightbox);
